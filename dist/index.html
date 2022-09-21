@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Frontend Mentor | Tip calculator</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/compiled.css">
+</head>
+
+<body>
+    <img class="logo" src="svg/logo.svg" alt="Splitter logo">
+<main>
+    <form class="form">
+        <fieldset>
+            <label class="label" for="bill">Bill</label>
+            <input class="input" type="number" id="bill" placeholder="0" style="background-image: url(svg/icon-dollar.svg)">
+        </fieldset>
+    
+        <fieldset>
+            <div class="label">Select Tip %</div>
+            <div class="btns">
+                <label class="btn">
+                    <input type="radio" name="percentage" value="5">
+                    <div class="faux-btn">5%</div>
+                </label>
+    
+                <label class="btn">
+                    <input type="radio" name="percentage" value="10">
+                    <div class="faux-btn">10%</div>
+                </label>
+    
+                <label class="btn">
+                    <input type="radio" name="percentage" value="15">
+                    <div class="faux-btn">15%</div>
+                </label>
+    
+                <label class="btn">
+                    <input type="radio" name="percentage" value="25">
+                    <div class="faux-btn">25%</div>
+                </label>
+    
+                <label class="btn">
+                    <input type="radio" name="percentage" value="50">
+                    <div class="faux-btn">50%</div>
+                </label>
+    
+                <input class="input" type="number" placeholder="Custom">
+    
+            </div>
+        </fieldset>
+    
+        <fieldset>
+    
+            <label class="label" for="peoples">Number of People</label>
+            <input class="input" type="number" id="peoples" placeholder="0"
+                style="background-image: url(svg/icon-person.svg)">
+        </fieldset>
+    </form>    <div class="result">
+        <dl>
+            <dt>Tip Amount<div>/ person</dt>
+            <dd>
+                <input type="text" class="calculation" id="tip-amount" placeholder="&dollar;0.00" readonly>
+            </dd>
+        </dl>
+        <dl>
+            <dt>
+                Total<div>/ person</div>
+            </dt>
+            <dd>
+                <input type="text" class="calculation" id="total" placeholder="&dollar;0.00" readonly>
+            </dd>
+        </dl>
+        <button type="reset" class="reset">RESET</button>
+    </div></main>
+</body>
+
+</html>

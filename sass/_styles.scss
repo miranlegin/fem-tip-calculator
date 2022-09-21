@@ -1,1 +1,37 @@
 // general styling
+
+body {
+  background-color: var(--light-grayish-cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 5rem;
+  font-weight: var(--fw-base);
+  font-family: var(--ff-base);
+}
+
+.logo {
+  margin-inline: auto;
+}
+
+main {
+  width: Min(100%, 57.5rem);
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  box-shadow: 0 0.5rem 3rem hsla(183, 100%, 15%, 0.125);
+}
+
+.form {
+  padding: 0.5rem;
+}
+
+.result {
+  background-color: var(--dark-cyan);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
