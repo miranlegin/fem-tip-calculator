@@ -92,6 +92,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
+- [convert string to number in javascript](https://dev.to/sanchithasr/7-ways-to-convert-a-string-to-number-in-javascript-4l)
+
 - [HSL Alpha on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsla) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Hide arrows from input type="number"](https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 

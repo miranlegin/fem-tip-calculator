@@ -3,9 +3,10 @@
 const bill = document.querySelector('#bill');
 const peoples = document.querySelector('#peoples');
 const custom = document.querySelector('#custom');
-const inputs = document.querySelectorAll('.input');
+
 const tips = document.querySelectorAll('input[name="percentage"]');
 const customOveride = document.querySelector('#custom-override');
+
 const resetBtn = document.querySelector('#reset');
 
 // UI fields to populate
@@ -13,54 +14,61 @@ const resetBtn = document.querySelector('#reset');
 const tipAmount = document.querySelector('#tip-amount');
 const total = document.querySelector('#total');
 
-inputs.forEach((input) => {
-  //   input.addEventListener('keyup', calculate);
-});
+// Events listeners
 
-custom.addEventListener('keyup', addCustom);
-
+bill.addEventListener('keyup', calculate);
+peoples.addEventListener('keyup', calculate);
+custom.addEventListener('keyup', addCustomTip);
 tips.forEach((tip) => {
-  tip.addEventListener('change', selectTip);
+  tip.addEventListener('change', addSelectedTip);
 });
+resetBtn.addEventListener('click', reset);
 
-function selectTip(event) {
-  const selectedTip = event.target.value;
-  custom.value = '';
-  calculate(selectedTip);
-}
+// Function declarations
 
-function addCustom() {
-  amount = custom.value;
-  customOveride.checked = true;
-  customOveride.value = amount;
-  calculate(amount);
-}
-
-function calculate(amount) {
+function calculate() {
   if (bill.value === '' || peoples.value === '') {
     return;
   }
 
-  //   console.log(bill.value, peoples.value);
-
-  tipValue = (bill.value * (amount / 100)) / peoples.value;
+  tipValue = (bill.value * (customOveride.value / 100)) / peoples.value;
   totalValue = bill.value / peoples.value + tipValue;
-
-  //   console.log(tipValue, totalValue);
 
   tipAmount.value = `$${tipValue.toFixed(2)}`;
   total.value = `$${totalValue.toFixed(2)}`;
 }
 
-resetBtn.addEventListener('click', reset);
+function addSelectedTip(event) {
+  // set selected value in variable
+  const selectedTip = parseInt(event.target.value);
+
+  // remove custom override oncustom input
+  custom.value = '';
+
+  // set hidden checkbox value
+  customOveride.value = selectedTip;
+
+  calculate();
+}
+
+function addCustomTip() {
+  // extract value into variable
+  const customTip = parseInt(custom.value);
+
+  // set hidden checkbox to true
+  customOveride.checked = true;
+  // set hidden checkbox value
+  customOveride.value = customTip;
+
+  calculate();
+}
 
 function reset() {
-  inputs.forEach((input) => {
-    input.value = '';
-  });
-
+  bill.value = '';
+  peoples.value = '';
+  custom.value = '';
   customOveride.checked = true;
-  customOveride.value = 1;
-  total.value = '';
+  customOveride.value = 0;
   tipAmount.value = '';
+  total.value = '';
 }
